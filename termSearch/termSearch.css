@@ -1,0 +1,101 @@
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:200,400,700,800);*/
+
+/*html * {*/
+	/*font-family: 'Roboto', sans-serif;*/
+	/*font-size: 14px;*/
+	/*color: #00131a;*/
+	/*background-color: transparent;*/
+/*}*/
+
+body {
+	width: inherit;
+	background-color: inherit;
+}
+
+:hover{
+	text-decoration: underline;
+	cursor: hand;
+}
+
+:visited{
+	color: #b41f77;
+}
+
+a {
+	color: dodgerblue;
+	text-decoration: none;
+}
+
+.termLabel{
+	font-size: 30px;
+	color: #00131a;
+}
+
+.termLabel:hover{
+	text-decoration: underline;
+	cursor: hand;
+}
+
+.sourceTerminology{
+	font-size: 10px;
+	color: #e94d18;
+	vertical-align: sub; /*top*/
+	padding-left: 5px;
+}
+
+.property{
+	padding-right: 5px;
+	font-weight: bold;
+}
+
+.infobox {
+	padding-bottom: 28px;
+}
+
+hr {
+	border: none;
+	border-top: 1px dotted #E0E0E0;
+	background-color: inherit;
+	height: 1px;
+}
+
+.exampleTerm {
+	text-decoration: underline;
+}
+
+
+
+.overlay {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.overlay-content {
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #00131a;
+	text-decoration: none;
+	cursor: pointer;
+}

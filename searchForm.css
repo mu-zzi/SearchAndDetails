@@ -1,0 +1,43 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:200,400,700,800);
+
+html * {
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #00131a;
+	background-color: transparent;
+}
+
+body,
+#box_results {
+	width: 600px;
+	background-color: #F7F7F7;
+	margin: 10px;
+}
+
+#box {
+	border: 1px solid #DADFE1;
+	/*width: 800px;*/
+/* 	margin-left: 15%; */
+}
+
+#link{
+	font-style: italic;
+	color: #888;;
+}
+
+input[type=search],
+input[type=image]{
+	height: 30px;
+}
+
+table,
+input[type=search]{
+	width: 550px;
+}
+
+#searchButton{
+	position: absolute;
+	padding-left: 10px;
+}
+
+

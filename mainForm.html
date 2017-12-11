@@ -1,0 +1,77 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/flick/jquery-ui.css" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+
+    <link href="searchForm.css" rel="stylesheet"/>
+    <link href="termSearch/termSearch.css" rel="stylesheet" />
+    <script src="search.js"></script>
+    <script src="termSearch/TermSearch.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+
+    <div id="tabs-1">
+
+        <form action="">
+            <input id="normalSearchInput" type="search"/>
+            <input id="searchButton" type="image" src="search.png" value="Search"/>
+            <table>
+                <tr>
+                    <td align="left">
+					<span id="includeExternalText">
+
+					<input id='includeExternal' type="checkbox" name='searchTerminology' value='external'/>
+					<label for='includeExternal'>Include external terminologies</label>
+					</span>
+                    </td>
+                    <td align="right">
+                        <label>
+                            Examples: <span class="exampleTerm">bacteria</span>, <span class="exampleTerm">polydesmus</span>, <span class="exampleTerm">soil</span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id='exact' type='checkbox' name='searchType' value='exact' checked/>
+                        <label for="exact">Exact Search</label>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div id="box_results">
+        <div id="results"></div>
+    </div>
+</div>
+<input id="searchType" type="hidden" value="Normal"/>
+
+</body>
+<script>
+    $(document).ready(function () {
+        SEARCH.init('results');
+        SEARCH.cleanUp();
+        SEARCH.textSearch();
+    });
+
+    $('#searchButton').click(function () {
+        var searchType = $('input[id=exact]:checked').val();
+        var searchTerminology = $('input[id=includeExternal]:checked').val();
+        var searchInput = $('#normalSearchInput').val();
+
+        if(searchInput.length > 0){
+            SEARCH.performSearch(searchInput, searchType, searchTerminology);
+        }else{
+            alert('Please enter a search term.');
+        }
+
+        return false;
+    });
+
+    $('.exampleTerm').click(function(){
+        document.getElementById("normalSearchInput").value = $(this).text();
+    });
+</script>
+</html>
